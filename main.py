@@ -16,6 +16,7 @@ def hello_world():
 @app.route('/button')
 def button():
     hdmi(DEFAULT)
+    return render_template('index.html')
 
 if __name__ == "__main__":
     hello_world()
