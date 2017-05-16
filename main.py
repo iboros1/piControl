@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.5
 from flask import Flask, render_template
-
+from execute import DEFAULT, hdmi
 
 app = Flask(__name__)
 #app.run(host='0.0.0.0', port='5002')
@@ -8,7 +8,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    col = DEFAULT[1]
+    default = DEFAULT[0]
+    hdmi(DEFAULT)
+    return render_template('index.html', state=default, color=col)
 
 if __name__ == "__main__":
     hello_world()
